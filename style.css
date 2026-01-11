@@ -1,26 +1,21 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+/* -----------------------------
+   RESET / БАЗОВІ СТИЛІ
+-------------------------------*/
+h1, h2, h3, h4, h5, h6, p {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-ul,
-ol,
-li {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style-type: none;
+ul, ol, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 a {
   color: #111111;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .img {
@@ -39,10 +34,10 @@ body {
   margin: 0;
   color: #111111;
   background-color: #efe8db;
+  line-height: 1.6;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -52,73 +47,88 @@ main {
   flex: 1 0 auto;
 }
 
+.footer {
+  height: 50px;
+  background-color: #e4ccb8;
+}
+
+/* -----------------------------
+   CONTAINER
+-------------------------------*/
+.container {
+  max-width: 1168px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* -----------------------------
+   HEADER
+-------------------------------*/
 .page-header {
   background: #efe8db;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 50px;
-  padding: 30px 50px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .header-nav {
+  padding: 20px 0;
   display: flex;
-  align-items: center;
   gap: 50px;
   width: 100%;
-  max-width: 1168px;
-  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
+  margin-left: 50px;
+}
+
+.logo-title {
   font-family: "Allura", sans-serif;
-  font-size: 24px;
+  font-size: 28px;
+  color: #3a1f0b;
 }
 
 .menu {
   display: flex;
-  gap: 40px;
-  list-style: none;
+  gap: 50px;
+  margin-left: 500px;
 }
 
-.menu li a {
-  text-decoration: none;
-  color: #2d1414;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.menu li a:hover {
-  color: #e4ccb8;
+.menu a:hover {
+  color: #e4bfa3;
+  text-shadow: 0 0 4px rgba(0,0,0,0.1);
 }
 
 .shop-link {
-  height: 36px;
-  width: 130px;
-  background-color: #e4ccb8;
-  border-radius: 5px;
+  height: 35px;
+  width: 140px;
+  background: linear-gradient(135deg, #e4ccb8, #f0d7c1);
+  margin-left: 200px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
-  text-decoration: none;
-  color: #2d1414;
-  transition: background 0.3s ease, transform 0.3s ease;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .shop-link:hover {
-  background-color: #d9bfa3;
   transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
+/* -----------------------------
+   HERO
+-------------------------------*/
 .hero {
   background-image: url("./images/hero.jpg");
-
   height: 500px;
   width: 100%;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -128,71 +138,62 @@ main {
 }
 
 .hero-title {
-  font-family: "Allura", sans-serif;
   font-size: 50px;
   color: #2d1414;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
 }
 
 .hero-link {
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 100px;
-  height: 36px;
-  width: 130px;
-  background-color: #e4ccb8;
-  border-radius: 5px;
+  margin: 100px auto 0;
+  height: 35px;
+  width: 140px;
+  background: linear-gradient(135deg, #e4ccb8, #f0d7c1);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
-  text-decoration: none;
-  color: #2d1414;
-  transition: background 0.3s ease, transform 0.3s ease;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .hero-link:hover {
-  background-color: #d9bfa3;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+/* -----------------------------
+   OUR SERVICES
+-------------------------------*/
 .our-services {
-  height: 700px;
-  background: #f9f3ec;
-  padding-top: 60px; /* трохи повітря зверху */
-  padding-bottom: 50px;
+  height: 600px;
 }
 
 .our-services-title {
-  font-family: "Allura", sans-serif;
-  font-size: 36px;
-  margin-left: 650px;
-  margin-bottom: 50px;
-  color: #2d1414;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 30px;
+  margin-left: 510px;
+  margin-top: 50px;
+  color: #3a1f0b;
 }
 
 .service-set {
   display: flex;
   justify-content: center;
-  gap: 80px;
-  margin-top: 50px;
+  gap: 100px;
+  margin-top: 100px;
 }
 
 .card {
   width: 320px;
-  background-color: #fff5ee; /* світліший фон для картки */
-  border-radius: 20px; /* більш округлі кути */
+  background: linear-gradient(145deg, #fff5ee, #ecd6c2);
+  border-radius: 12px;
   overflow: hidden;
   text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-  will-change: transform;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* легка тінь по замовчуванню */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
-  transform: scale(1.05) translateY(-10px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-  background-color: #fff8f0; /* трохи тепліший на hover */
+  transform: scale(1.03) translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
 }
 
 .card-image {
@@ -201,76 +202,68 @@ main {
   overflow: hidden;
   border-top-left-radius: 160px;
   border-top-right-radius: 160px;
-  transition: transform 0.4s ease;
 }
 
 .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
 
 .card-image img:hover {
-  transform: scale(1.1) rotate(1deg); /* легкий ефект zoom + крутіння */
+  transform: scale(1.05);
 }
 
 .candle-title {
-  padding-top: 20px;
-  padding-bottom: 10px;
-  font-size: 22px;
-  color: #2d1414;
+  padding: 20px 0;
+  font-weight: 600;
+  color: #3a1f0b;
 }
 
 .candle-title-descr {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   color: #4a2f1a;
-  font-size: 14px;
-  line-height: 1.6;
 }
 
+/* -----------------------------
+   GIFT IDEAS
+-------------------------------*/
 .gift-ideas {
-  min-height: 900px;
-  background: #fdf6f0;
-  padding: 50px; /* простір зверху і з боків */
+  height: 890px;
+  position: relative;
 }
 
 .gift-wrapper {
-  display: flex;
-  align-items: center; /* вертикальне центрування */
-  justify-content: space-between; /* картинка праворуч, текст ліворуч */
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto; /* центр по ширині екрану */
-  padding: 20px;
-}
-
-.gift-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  position: relative;
 }
 
 .gift-image {
-  max-width: 400px;
-  height: auto;
-  border-bottom-left-radius: 160px;
-  border-bottom-right-radius: 160px;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
 }
 
 .gift-image img {
-  width: 100%;
+  width: 83%;
+  max-width: 400px;
   height: auto;
-  display: block;
   object-fit: cover;
+  border-bottom-left-radius: 160px;
+  border-bottom-right-radius: 160px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+
+.gift-image img:hover {
+  transform: scale(1.03);
 }
 
 .sub-one-gift {
   background-color: #fff;
-  border-radius: 20px 20px 0 0;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  padding: 50px 0; /* додатковий простір зверху і знизу */
+  height: 400px;
 }
 
 .sub-two-gift {
@@ -278,48 +271,45 @@ main {
 }
 
 .gift-title {
-  font-family: "Allura", sans-serif;
   font-size: 30px;
-  color: #2d1414;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
-  margin: 0;
+  margin-left: 170px;
+  padding-top: 30px;
 }
 
 .gift-title-descr {
-  color: #4a2f1a;
-  line-height: 1.6;
-  max-width: 400px;
-  margin: 0;
+  width: 300px;
+  margin-left: 170px;
+  padding-top: 20px;
 }
 
 .gift-link {
-  display: inline-flex;
+  height: 35px;
+  width: 140px;
+  background: linear-gradient(135deg, #e4ccb8, #f0d7c1);
+  margin-left: 240px;
+  margin-top: 30px;
+  border-radius: 12px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 36px;
-  width: 130px;
-  background-color: #e4ccb8;
-  border-radius: 5px;
-  font-weight: 500;
-  text-decoration: none;
-  color: #2d1414;
-  transition: background 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .gift-link:hover {
-  background-color: #d9bfa3;
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+/* -----------------------------
+   POPULAR ITEMS
+-------------------------------*/
 .popular-title {
-  font-family: "Allura", sans-serif;
   font-size: 30px;
   margin-left: 630px;
   margin-bottom: 50px;
   padding-top: 50px;
-  color: #2d1414;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+  color: #3a1f0b;
 }
 
 .popular-items {
@@ -329,81 +319,44 @@ main {
   margin-top: 50px;
   padding-bottom: 50px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .popular-item {
   width: 200px;
   height: 300px;
   overflow: hidden;
-  border-radius: 12px;
-  background: linear-gradient(145deg, #fff5ee, #fdf0e6);
+  border-radius: 16px;
+  background: linear-gradient(145deg, #fff5ee, #ecd6c2);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .popular-item:hover {
-  transform: scale(1.05) translateY(-5px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15),
-    0 0 15px rgba(255, 223, 190, 0.25);
+  transform: scale(1.06);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .popular-item-pic {
   width: 100%;
   height: 250px;
   display: block;
-  border-radius: 12px;
-  background-color: #fff;
+  border-radius: 16px;
   overflow: hidden;
-  position: relative;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .popular-item-pic:hover {
   transform: translateY(-6px) scale(1.03);
-  background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.35),
-      rgba(33, 31, 31, 0) 50%
-    ),
-    linear-gradient(
-      to left,
-      rgba(255, 255, 255, 0.25),
-      rgba(255, 255, 255, 0) 50%
-    );
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
-.popular-item-pic::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.35),
-      rgba(255, 255, 255, 0) 50%
-    ),
-    linear-gradient(
-      to left,
-      rgba(255, 255, 255, 0.25),
-      rgba(255, 255, 255, 0) 50%
-    );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-  border-radius: 0 0 12px 12px;
-}
-
-.popular-item-pic:hover::after {
-  opacity: 1;
-}
-
+/* -----------------------------
+   CONTACT
+-------------------------------*/
 .talk-to-us {
   margin-top: 80px;
 }
@@ -414,16 +367,21 @@ main {
   background-color: #e4ccb8;
   border-radius: 250px 250px 0 0;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
 .contact-field-title {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 20px;
+  font-size: 24px;
 }
 
 .contact-field-descr {
-  padding-top: 40px;
-  margin-left: 50px;
+  padding-top: 20px;
   width: 400px;
   text-align: center;
 }
@@ -437,58 +395,24 @@ main {
   transition: transform 0.3s ease;
 }
 
-.telegram-content a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.telegram-icon {
-  width: 24px;
-  height: 24px;
-  opacity: 0.75;
-  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
-}
-
-.telegram-pgh {
-  font-size: 14px;
-  letter-spacing: 1px;
-  color: #2d1414;
-  opacity: 0.8;
-  transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
-}
-
 .telegram-content a:hover .telegram-icon,
 .telegram-content a:hover .telegram-pgh {
   transform: translateY(-3px);
   opacity: 1;
   filter: drop-shadow(0 6px 12px rgba(45, 20, 20, 0.25));
-  color: #2d1414;
 }
 
+/* -----------------------------
+   FOOTER
+-------------------------------*/
 .footer {
-  height: 60px;
+  height: 50px;
   background-color: #e4ccb8;
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Allura", sans-serif;
-  flex-shrink: 0;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  max-width: 1168px;
-}
-
-.footer-text {
-  font-size: 14px;
-  color: #2d1414;
-  opacity: 0.7;
-  margin-left: 1000px;
+  font-size: 18px;
+  color: #3a1f0b;
 }
