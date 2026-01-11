@@ -1,0 +1,15 @@
+# macOS system files
+.DS_Store
+
+# Node / dependency folders (if you add npm later)
+node_modules/
+
+# Build folders (if any)
+dist/
+build/
+
+# Optional: log files
+*.log
+
+# Optional: OS-specific files
+Thumbs.db
