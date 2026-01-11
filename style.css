@@ -156,9 +156,8 @@ main {
 }
 
 .our-services {
-
   height: 700px;
-  background: #f9f3ec; 
+  background: #f9f3ec;
   padding-top: 60px; /* трохи повітря зверху */
   padding-bottom: 50px;
 }
@@ -169,7 +168,7 @@ main {
   margin-left: 650px;
   margin-bottom: 50px;
   color: #2d1414;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .service-set {
@@ -187,7 +186,7 @@ main {
   text-align: center;
   transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
   will-change: transform;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* легка тінь по замовчуванню */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* легка тінь по замовчуванню */
 }
 
 .card:hover {
@@ -230,7 +229,6 @@ main {
   line-height: 1.6;
 }
 
-
 .gift-ideas {
   min-height: 900px; /* або auto, щоб підлаштовувалося під контент */
   background: #fdf6f0;
@@ -240,34 +238,35 @@ main {
 
 .gift-wrapper {
   position: relative;
-  min-height: 300px;
-  margin-bottom: 0;
-  z-index: 0; /* базовий шар */
+  display: flex; /* додаємо flex для вирівнювання */
+  align-items: center; /* вертикальне вирівнювання */
+  justify-content: flex-start; /* картинка праворуч, текст ліворуч */
+  gap: 50px; /* простір між картинкою і текстом */
+  min-height: 400px;
+  padding: 0 50px; /* відступи з боків */
 }
 
 .gift-image {
-  position: absolute;
-  right: 0;
-  top: 48.5%;
-  transform: translateY(-50%);
-  z-index: 1; /* зображення під кнопкою */
+  position: relative; /* більше не absolute */
+  max-width: 400px;
+  height: auto;
+  border-bottom-left-radius: 160px;
+  border-bottom-right-radius: 160px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
 }
 
-
-
 .gift-image img {
-  margin-left: 700px; /* трохи зменшити, щоб не тиснуло */
-  margin-top: 0;
-  transform: translate(-80px, 80px); /* менш агресивне зміщення */
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 .sub-one-gift {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  height: 400px;
   background-color: #fff;
   border-radius: 20px 20px 0 0;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  padding: 50px 0; /* додатковий простір зверху і знизу */
 }
 
 .sub-two-gift {
@@ -280,7 +279,7 @@ main {
   margin-left: 170px;
   padding-top: 30px;
   color: #2d1414;
-  text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .gift-title-descr {
@@ -293,7 +292,7 @@ main {
 
 .gift-link {
   position: relative; /* додаємо, щоб працював z-index */
-  z-index: 10;        /* піднімаємо кнопку над зображенням */
+  z-index: 10; /* піднімаємо кнопку над зображенням */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -310,7 +309,6 @@ main {
   margin-bottom: 50px;
 }
 
-
 .gift-link:hover {
   background-color: #d9bfa3;
   transform: translateY(-2px);
@@ -323,7 +321,7 @@ main {
   margin-bottom: 50px;
   padding-top: 50px;
   color: #2d1414;
-  text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .popular-items {
@@ -346,13 +344,14 @@ main {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
 }
 
 .popular-item:hover {
   transform: scale(1.05) translateY(-5px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15), 0 0 15px rgba(255,223,190,0.25);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 15px rgba(255, 223, 190, 0.25);
 }
 
 .popular-item-pic {
@@ -406,7 +405,6 @@ main {
 .popular-item-pic:hover::after {
   opacity: 1;
 }
-
 
 .talk-to-us {
   margin-top: 80px;
@@ -478,9 +476,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Allura', sans-serif;
+  font-family: "Allura", sans-serif;
   flex-shrink: 0;
- 
 }
 
 .footer-container {
@@ -492,10 +489,8 @@ main {
 }
 
 .footer-text {
-  
   font-size: 14px;
   color: #2d1414;
   opacity: 0.7;
   margin-left: 1000px;
 }
-
