@@ -230,24 +230,28 @@ main {
 }
 
 .gift-ideas {
-  min-height: 900px; /* або auto, щоб підлаштовувалося під контент */
+  min-height: 900px;
   background: #fdf6f0;
-  position: relative;
-  padding-top: 50px; /* додатковий простір зверху */
+  padding: 50px; /* простір зверху і з боків */
 }
 
 .gift-wrapper {
-  position: relative;
-  display: flex; /* додаємо flex для вирівнювання */
-  align-items: center; /* вертикальне вирівнювання */
-  justify-content: flex-start; /* картинка праворуч, текст ліворуч */
-  gap: 50px; /* простір між картинкою і текстом */
-  min-height: 400px;
-  padding: 0 50px; /* відступи з боків */
+  display: flex;
+  align-items: center;       /* вертикальне центрування */
+  justify-content: space-between; /* картинка праворуч, текст ліворуч */
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;            /* центр по ширині екрану */
+  padding: 20px;
+}
+
+.gift-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;                 /* відступ між заголовком, текстом та кнопкою */
 }
 
 .gift-image {
-  position: relative; /* більше не absolute */
   max-width: 400px;
   height: auto;
   border-bottom-left-radius: 160px;
@@ -276,23 +280,19 @@ main {
 .gift-title {
   font-family: "Allura", sans-serif;
   font-size: 30px;
-  margin-left: 170px;
-  padding-top: 30px;
   color: #2d1414;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+  margin: 0;
 }
 
 .gift-title-descr {
-  width: 300px;
-  margin-left: 170px;
-  padding-top: 20px;
   color: #4a2f1a;
   line-height: 1.6;
+  max-width: 400px;
+  margin: 0;
 }
 
 .gift-link {
-  position: relative; /* додаємо, щоб працював z-index */
-  z-index: 10; /* піднімаємо кнопку над зображенням */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -305,8 +305,6 @@ main {
   color: #2d1414;
   transition: background 0.3s ease, transform 0.3s ease;
   cursor: pointer;
-  margin-left: 240px;
-  margin-bottom: 50px;
 }
 
 .gift-link:hover {
