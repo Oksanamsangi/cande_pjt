@@ -232,10 +232,10 @@ main {
 
 
 .gift-ideas {
-  
-  height: 890px;
-  background: #fdf6f0; /* ніжний фон для секції */
+  min-height: 900px; /* або auto, щоб підлаштовувалося під контент */
+  background: #fdf6f0;
   position: relative;
+  padding-top: 50px; /* додатковий простір зверху */
 }
 
 .gift-wrapper {
@@ -254,17 +254,11 @@ main {
 }
 
 
+
 .gift-image img {
-  width: 83%;
-  max-width: 400px;
-  height: auto;
-  object-fit: cover;
-  margin-left: 800px;
+  margin-left: 700px; /* трохи зменшити, щоб не тиснуло */
   margin-top: 0;
-  transform: translate(-90px, 90px);
-  border-bottom-left-radius: 160px;
-  border-bottom-right-radius: 160px;
-  box-shadow: 0 15px 25px rgba(0,0,0,0.08);
+  transform: translate(-80px, 80px); /* менш агресивне зміщення */
 }
 
 .sub-one-gift {
