@@ -237,18 +237,18 @@ main {
 
 .gift-wrapper {
   display: flex;
-  align-items: center;       /* вертикальне центрування */
+  align-items: center; /* вертикальне центрування */
   justify-content: space-between; /* картинка праворуч, текст ліворуч */
   gap: 50px;
   max-width: 1200px;
-  margin: 0 auto;            /* центр по ширині екрану */
+  margin: 0 auto; /* центр по ширині екрану */
   padding: 20px;
 }
 
 .gift-content {
   display: flex;
   flex-direction: column;
-  gap: 20px;                 /* відступ між заголовком, текстом та кнопкою */
+  gap: 20px;
 }
 
 .gift-image {
