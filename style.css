@@ -71,6 +71,7 @@ main {
   display: flex;
   align-items: center;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  height: 80px;
 }
 
 .header-nav {
@@ -87,7 +88,7 @@ main {
 
 .logo-title {
   font-family: "Allura", sans-serif;
-  font-size: 28px;
+  font-size: 20px;
   color: #3a1f0b;
 }
 
@@ -166,6 +167,7 @@ main {
 -------------------------------*/
 .our-services {
   height: 600px;
+  margin-bottom: 100px;
 }
 
 .our-services-title {
@@ -247,7 +249,8 @@ main {
 }
 
 .gift-image img {
-  width: 83%;
+
+  width: 90%;
   max-width: 400px;
   height: auto;
   object-fit: cover;
@@ -255,11 +258,10 @@ main {
   border-bottom-right-radius: 160px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.1);
   transition: transform 0.4s ease;
+  transform: translate(-95px, 65px);
 }
 
-.gift-image img:hover {
-  transform: scale(1.03);
-}
+
 
 .sub-one-gift {
   background-color: #fff;
@@ -358,7 +360,7 @@ main {
    CONTACT
 -------------------------------*/
 .talk-to-us {
-  margin-top: 80px;
+  margin-top: 150px;
 }
 
 .contact-fied {
@@ -387,32 +389,60 @@ main {
 }
 
 .telegram-content {
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-  transition: transform 0.3s ease;
 }
 
-.telegram-content a:hover .telegram-icon,
-.telegram-content a:hover .telegram-pgh {
-  transform: translateY(-3px);
+.telegram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* відстань між іконкою та текстом */
+}
+
+.telegram-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.8;
+}
+
+.telegram-pgh {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #2d1414;
+  opacity: 0.85;
+}
+
+.telegram-link:hover {
+  transform: translateY(-2px);
+}
+
+.telegram-link:hover .telegram-icon {
   opacity: 1;
-  filter: drop-shadow(0 6px 12px rgba(45, 20, 20, 0.25));
+}
+
+.telegram-link:hover .telegram-pgh {
+  opacity: 1;
+  letter-spacing: 1px;
 }
 
 /* -----------------------------
    FOOTER
 -------------------------------*/
 .footer {
-  height: 50px;
+  min-height: 60px;
   background-color: #e4ccb8;
-  flex-shrink: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-end;
+  
+}
+
+.footer-text {
+  margin-right: 20px;
   font-family: "Allura", sans-serif;
-  font-size: 18px;
-  color: #3a1f0b;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  color: #2d1414;
+  opacity: 0.7;
 }
