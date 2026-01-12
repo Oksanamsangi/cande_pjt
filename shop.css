@@ -1,0 +1,58 @@
+.shop {
+  padding: 80px 40px;
+  background: #fdf6f0;
+}
+
+.shop-title {
+  text-align: center;
+  font-family: "Allura", sans-serif;
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+
+.shop-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  width: 270px;
+  height: 450px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: transform .3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 320px;
+  border-radius: 16px;
+  margin-bottom: 15px;
+}
+
+.price {
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.add-to-cart {
+  background: #e4ccb8;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+.add-to-cart:hover {
+  background: #d9bfa3;
+}
