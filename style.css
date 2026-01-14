@@ -1,12 +1,17 @@
-/* -----------------------------
-   RESET / БАЗОВІ СТИЛІ
--------------------------------*/
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-ul, ol, li {
+ul,
+ol,
+li {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -37,7 +42,8 @@ body {
   line-height: 1.6;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -52,9 +58,6 @@ main {
   background-color: #e4ccb8;
 }
 
-/* -----------------------------
-   CONTAINER
--------------------------------*/
 .container {
   max-width: 1168px;
   margin-left: auto;
@@ -63,14 +66,11 @@ main {
   padding-right: 16px;
 }
 
-/* -----------------------------
-   HEADER
--------------------------------*/
 .page-header {
   background: #efe8db;
   display: flex;
   align-items: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   height: 80px;
 }
 
@@ -100,7 +100,7 @@ main {
 
 .menu a:hover {
   color: #e4bfa3;
-  text-shadow: 0 0 4px rgba(0,0,0,0.1);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 .shop-link {
@@ -118,12 +118,9 @@ main {
 
 .shop-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* -----------------------------
-   HERO
--------------------------------*/
 .hero {
   background-image: url("./images/hero.jpg");
   height: 500px;
@@ -141,7 +138,7 @@ main {
 .hero-title {
   font-size: 50px;
   color: #2d1414;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero-link {
@@ -159,14 +156,25 @@ main {
 
 .hero-link:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* -----------------------------
-   OUR SERVICES
--------------------------------*/
+.about {
+  padding: 150px 20px 100px;
+  text-align: center;
+  background: #faf9f7;
+  color: #333;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
 .our-services {
-  height: 600px;
+  height: auto;
   margin-bottom: 100px;
 }
 
@@ -195,7 +203,7 @@ main {
 
 .card:hover {
   transform: scale(1.03) translateY(-6px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
 .card-image {
@@ -228,12 +236,10 @@ main {
   color: #4a2f1a;
 }
 
-/* -----------------------------
-   GIFT IDEAS
--------------------------------*/
 .gift-ideas {
   height: 890px;
   position: relative;
+  margin-bottom: 100px;
 }
 
 .gift-wrapper {
@@ -249,19 +255,16 @@ main {
 }
 
 .gift-image img {
-
   width: 90%;
   max-width: 400px;
   height: auto;
   object-fit: cover;
   border-bottom-left-radius: 160px;
   border-bottom-right-radius: 160px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease;
   transform: translate(-95px, 65px);
 }
-
-
 
 .sub-one-gift {
   background-color: #fff;
@@ -300,12 +303,9 @@ main {
 
 .gift-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* -----------------------------
-   POPULAR ITEMS
--------------------------------*/
 .popular-title {
   font-size: 30px;
   margin-left: 630px;
@@ -317,7 +317,6 @@ main {
 .popular-items {
   display: flex;
   gap: 100px;
-  padding: 0;
   margin-top: 50px;
   padding-bottom: 50px;
   justify-content: center;
@@ -339,7 +338,7 @@ main {
 
 .popular-item:hover {
   transform: scale(1.06);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .popular-item-pic {
@@ -353,12 +352,9 @@ main {
 
 .popular-item-pic:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* -----------------------------
-   CONTACT
--------------------------------*/
 .talk-to-us {
   margin-top: 150px;
 }
@@ -373,7 +369,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .contact-field-title {
@@ -397,7 +393,7 @@ main {
 .telegram-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px; /* відстань між іконкою та текстом */
+  gap: 6px;
 }
 
 .telegram-icon {
@@ -426,16 +422,12 @@ main {
   letter-spacing: 1px;
 }
 
-/* -----------------------------
-   FOOTER
--------------------------------*/
 .footer {
   min-height: 60px;
   background-color: #e4ccb8;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  
 }
 
 .footer-text {
@@ -445,4 +437,238 @@ main {
   letter-spacing: 1.5px;
   color: #2d1414;
   opacity: 0.7;
+}
+
+@media (max-width: 1024px) {
+  .menu {
+    margin-left: auto;
+    gap: 30px;
+  }
+
+  .shop-link {
+    margin-left: 40px;
+  }
+
+  .hero-title {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .service-set {
+    gap: 40px;
+  }
+
+  .popular-title {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-nav {
+    gap: 20px;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  .menu {
+    margin-left: auto;
+    gap: 20px;
+  }
+
+  .shop-link {
+    margin-left: 0;
+  }
+
+  .hero {
+    height: 400px;
+    padding: 0 20px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-link {
+    margin-top: 50px;
+  }
+
+  .our-services-title {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .service-set {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .gift-ideas {
+    height: auto;
+  }
+
+  .gift-image {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .gift-image img {
+    transform: none;
+    max-width: 280px;
+  }
+
+  .gift-title,
+  .gift-title-descr,
+  .gift-link {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .gift-link {
+    margin-bottom: 30px;
+  }
+
+  .popular-items {
+    gap: 40px;
+  }
+
+  .contact-fied {
+    width: 90%;
+  }
+
+  .contact-field-descr {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .header-nav {
+    flex-direction: row;
+    padding: 10px 0;
+  }
+
+  .logo {
+    margin-left: 10px;
+  }
+
+  .logo-title {
+    font-size: 10px;
+  }
+
+  .menu {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .shop-link {
+    width: 50px;
+    height: 32px;
+    margin-right: 20px;
+  }
+
+  .hero {
+    height: 320px;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .hero-link {
+    width: 50px;
+    height: 32px;
+  }
+
+  .our-services-title {
+    margin-top: 20px;
+  }
+
+  .gift-ideas {
+    margin-bottom: 0;
+  }
+
+  .sub-one-gift {
+    height: auto;
+    padding-top: 0;
+    padding-bottom: 30px;
+  }
+
+  .sub-two-gift {
+    height: auto;
+  }
+
+  .gift-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gift-image {
+    margin-top: 0;
+  }
+
+  .gift-link {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .card-image {
+    height: 240px;
+  }
+
+  .gift-title {
+    padding-top: 0;
+  }
+
+  .popular-item {
+    width: 160px;
+    height: 260px;
+  }
+
+  .popular-title {
+    padding-top: 0;
+  }
+
+  .popular-item-pic {
+    height: 200px;
+  }
+
+  .popular-items {
+    margin-top: 0;
+  }
+
+  .about {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+
+  .talk-to-us {
+    margin-top: 30px;
+  }
+
+  .contact-fied {
+    height: auto;
+    padding: 30px 15px;
+    border-radius: 200px 200px 0 0;
+  }
+
+  .contact-field-title {
+    font-size: 20px;
+  }
 }

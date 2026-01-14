@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Cart | O.JM LUMIÈRE</title>
-  <link rel="stylesheet" href="cart.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cart | O.JM LUMIÈRE</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&family=Ballet:opsz@16..72&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+  <body>
+    <main class="cart">
+      <h1 class="cart-title">Your Cart</h1>
 
-<main class="cart">
-  <h1 class="cart-title">Your Cart</h1>
+      <div class="cart-items"></div>
 
-  <div class="cart-items"></div>
+      <div class="cart-total">Total: $<span id="total-price">0</span></div>
+    </main>
 
-  <div class="cart-total">
-    Total: $<span id="total-price">0</span>
-  </div>
-</main>
-
-<script src="cart.js"></script>
-</body>
+    <script src="cart.js"></script>
+  </body>
 </html>
