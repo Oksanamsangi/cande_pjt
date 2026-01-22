@@ -180,9 +180,9 @@ main {
 
 .our-services-title {
   font-size: 30px;
-  margin-left: 510px;
-  margin-top: 50px;
   color: #3a1f0b;
+  text-align: center;
+  margin: 50px auto 0;
 }
 
 .service-set {
@@ -454,13 +454,39 @@ main {
     text-align: center;
   }
 
+  .our-services-title {
+    margin: 40px auto 0;
+  }
+
   .service-set {
+    margin-top: 30px;
     gap: 40px;
   }
 
   .popular-title {
     margin-left: 0;
     text-align: center;
+  }
+
+  .popular-items {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .gift-ideas {
+    height: auto;
+    margin-bottom: 0px;
+  }
+
+  .about {
+    padding: 80px 20px 60px;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    max-width: 600px;
   }
 }
 
@@ -503,7 +529,7 @@ main {
   .service-set {
     flex-direction: row;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 30px;
   }
 
   .gift-ideas {
@@ -597,6 +623,10 @@ main {
 
   .gift-ideas {
     margin-bottom: 0;
+  }
+
+  .service-set {
+    gap: 15px;
   }
 
   .sub-one-gift {
