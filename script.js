@@ -1,180 +1,123 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const track = document.querySelector(".carousel-track");
-  const items = Array.from(document.querySelectorAll(".carousel-item"));
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
+  const buttons = document.querySelectorAll(".add-to-cart");
+  const cartItemsContainer = document.querySelector(".cart-items");
+  const totalPriceEl = document.getElementById("total-price");
 
-  const firstClone = items[0].cloneNode(true);
-  const lastClone = items[items.length - 1].cloneNode(true);
+  // Завантажуємо корзину з localStorage
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  track.appendChild(firstClone);
-  track.insertBefore(lastClone, items[0]);
+  // Додаємо товар у корзину
+  function addToCart(product) {
+    // Шукаємо товар за name
+    const existingItem = cart.find((item) => item.name === product.name);
 
-  const allItems = Array.from(track.children);
-  let currentIndex = 1;
-  track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-  const updateCarousel = (animate = true) => {
-    track.style.transition = animate ? "transform 0.4s ease" : "none";
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-  };
-
-  nextBtn.addEventListener("click", () => {
-    currentIndex++;
-    updateCarousel();
-  });
-  prevBtn.addEventListener("click", () => {
-    currentIndex--;
-    updateCarousel();
-  });
-
-  track.addEventListener("transitionend", () => {
-    if (allItems[currentIndex] === firstClone)
-      (currentIndex = 1), updateCarousel(false);
-    if (allItems[currentIndex] === lastClone)
-      (currentIndex = items.length), updateCarousel(false);
-  });
-
-  let startX = 0,
-    isDragging = false;
-  track.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-    isDragging = true;
-    track.style.transition = "none";
-  });
-  track.addEventListener("touchmove", (e) => {
-    if (!isDragging) return;
-    const diff = e.touches[0].clientX - startX;
-    track.style.transform = `translateX(calc(-${
-      currentIndex * 100
-    }% + ${diff}px))`;
-  });
-  track.addEventListener("touchend", (e) => {
-    if (!isDragging) return;
-    isDragging = false;
-    const diff = e.changedTouches[0].clientX - startX;
-    if (diff < -50) nextBtn.click();
-    else if (diff > 50) prevBtn.click();
-    else updateCarousel();
-  });
-
-  let wheelTimeout = null;
-  track.addEventListener("wheel", (e) => {
-    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-      e.preventDefault();
-      if (wheelTimeout) return;
-      if (e.deltaX > 10) nextBtn.click();
-      else if (e.deltaX < -10) prevBtn.click();
-      wheelTimeout = setTimeout(() => (wheelTimeout = null), 300);
+    if (existingItem) {
+      // Якщо є, збільшуємо quantity
+      existingItem.quantity += 1;
+      updateCartItemDOM(existingItem);
+    } else {
+      // Якщо немає, додаємо новий блок
+      cart.push(product);
+      createCartItemDOM(product);
     }
-  });
 
-  const modal = document.getElementById("bookingModal");
-  const openModalBtn = document.getElementById("openModal");
-  const closeBtn = document.querySelector(".modal .close");
-
-  const closeModal = () => {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
-  };
-
-  openModalBtn.addEventListener("click", () => {
-    modal.classList.add("active");
-    document.body.style.overflow = "hidden";
-  });
-  closeBtn.addEventListener("click", closeModal);
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
-  });
-
-  const form = document.getElementById("bookingForm");
-  const messageEl = document.getElementById("formMessage");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    messageEl.textContent = "";
-    try {
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
-      });
-      if (response.ok) {
-        messageEl.textContent =
-          "Thank you! Your session request has been sent.";
-        messageEl.style.color = "green";
-        form.reset();
-        setTimeout(() => {
-          closeModal();
-          messageEl.textContent = "";
-        }, 1800);
-      } else {
-        const data = await response.json();
-        messageEl.textContent = data.errors
-          ? data.errors.map((err) => err.message).join(", ")
-          : "Oops! Something went wrong, try again.";
-        messageEl.style.color = "red";
-      }
-    } catch {
-      messageEl.textContent = "Error submitting form. Check your connection.";
-      messageEl.style.color = "red";
-    }
-  });
-
-  const timeSelect = document.getElementById("time");
-  const dateInput = document.getElementById("date");
-
-  const generateTimeSlots = (startHour = 9, endHour = 18) => {
-    timeSelect.innerHTML = '<option value="">Select time</option>';
-    for (let hour = startHour; hour <= endHour; hour++) {
-      const h = String(hour).padStart(2, "0");
-      timeSelect.innerHTML += `<option value="${h}:00">${h}:00</option><option value="${h}:30">${h}:30</option>`;
-    }
-  };
-  generateTimeSlots(9, 18);
-
-  const updateMinDate = () => {
-    const now = new Date();
-    const yyyy = now.getFullYear();
-    const mm = String(now.getMonth() + 1).padStart(2, "0");
-    const dd = String(now.getDate()).padStart(2, "0");
-    dateInput.min = `${yyyy}-${mm}-${dd}`;
-
-    const timeNow = `${String(now.getHours()).padStart(2, "0")}:${String(
-      now.getMinutes()
-    ).padStart(2, "0")}`;
-    timeSelect.min = dateInput.value === dateInput.min ? timeNow : "00:00";
-  };
-
-  updateMinDate();
-  dateInput.addEventListener("change", updateMinDate);
-
-  const hamburger = document.getElementById("hamburger");
-  const menu = document.getElementById("menu");
-
-  hamburger.addEventListener("click", (e) => {
-    e.stopPropagation();
-    menu.classList.toggle("active");
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
-      menu.classList.remove("active");
-    }
-  });
-
-  const emailContact = document.getElementById("emailContact");
-  if (emailContact) {
-    emailContact.addEventListener("click", () => {
-      window.location.href = "mailto:anastasiixoxo.ph@gmail.com";
-    });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateTotal();
+    showNotification(`${product.name} додано в корзину 🤍`);
   }
 
-  const instaContact = document.getElementById("instaContact");
-  if (instaContact) {
-    instaContact.addEventListener("click", () => {
-      window.open("https://www.instagram.com/anastasiixoxo.ph/", "_blank");
+  // Створюємо новий блок DOM для товару
+  function createCartItemDOM(item) {
+    const cartItemEl = document.createElement("div");
+    cartItemEl.classList.add("cart-item");
+    cartItemEl.dataset.name = item.name; // ключ для перевірки існування
+
+    cartItemEl.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
+      <div class="cart-item-details">
+        <h3>${item.name}</h3>
+        <p>$${item.price}</p>
+      </div>
+      <div class="cart-item-controls">
+        <input type="number" min="1" value="${item.quantity}">
+        <button>Remove</button>
+      </div>
+    `;
+
+    const quantityInput = cartItemEl.querySelector("input");
+    const removeBtn = cartItemEl.querySelector("button");
+
+    quantityInput.addEventListener("change", (e) => {
+      let value = parseInt(e.target.value);
+      if (value < 1) value = 1;
+      item.quantity = value;
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateTotal();
     });
+
+    removeBtn.addEventListener("click", () => {
+      cart = cart.filter((i) => i.name !== item.name);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      cartItemEl.remove();
+      updateTotal();
+    });
+
+    cartItemsContainer.appendChild(cartItemEl);
   }
+
+  // Оновлюємо quantity у DOM
+  function updateCartItemDOM(item) {
+    const cartItemEl = cartItemsContainer.querySelector(
+      `[data-name="${item.name}"]`
+    );
+    if (!cartItemEl) return;
+    const quantityInput = cartItemEl.querySelector("input");
+    quantityInput.value = item.quantity;
+  }
+
+  // Оновлення загальної ціни
+  function updateTotal() {
+    const total = cart.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+    totalPriceEl.textContent = total.toFixed(2);
+  }
+
+  // Сповіщення
+  function showNotification(message) {
+    const notification = document.getElementById("notification");
+    notification.textContent = message;
+    notification.style.display = "block";
+
+    requestAnimationFrame(() => {
+      notification.style.opacity = "1";
+      notification.style.transform = "translateX(-50%) translateY(50px)";
+    });
+
+    setTimeout(() => {
+      notification.style.opacity = "0";
+      notification.style.transform = "translateX(-50%) translateY(-50px)";
+      setTimeout(() => {
+        notification.style.display = "none";
+      }, 600);
+    }, 2000);
+  }
+
+  // Кнопки додавання
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const product = {
+        name: button.dataset.name.trim(), // прибираємо пробіли
+        price: Number(button.dataset.price),
+        image: button.dataset.image,
+        quantity: 1,
+      };
+      addToCart(product);
+    });
+  });
+
+  // Ініціалізація при завантаженні
+  cart.forEach((item) => createCartItemDOM(item));
+  updateTotal();
 });

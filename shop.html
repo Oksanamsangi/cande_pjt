@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Shop | O.JM LUMIÈRE</title>
     <link rel="stylesheet" href="shop.css" />
-     <link
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
     />
@@ -15,19 +15,20 @@
       rel="stylesheet"
     />
   </head>
+  <div id="notification" class="notification"></div>
+
   <body>
     <header class="page-header">
       <nav class="header-nav">
         <div class="logo">
           <p class="logo-title">O.JM LUMIÈRE</p>
         </div>
-       
+
         <div class="cart-link">
           <a class="cart-link-title" href="cart.html">CART</a>
         </div>
       </nav>
-
-      </header>
+    </header>
 
     <main class="shop">
       <h1 class="shop-title">Our Candles</h1>
@@ -35,10 +36,11 @@
       <div class="shop-grid">
         <div class="product-card">
           <img src="./images/shop1.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">White Space</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="1"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop1.jpg"
@@ -49,10 +51,11 @@
 
         <div class="product-card">
           <img src="./images/shop2.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Bare Glow</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="2"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop2.jpg"
@@ -60,12 +63,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop3.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Gentle Flame</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="3"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop3.jpg"
@@ -73,12 +78,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop4.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Moon in Bloom</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="4"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop4.jpg"
@@ -86,12 +93,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop5.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Pure Wax</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="5"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop5.jpg"
@@ -99,25 +108,29 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop6.avif" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Floral Whisper</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="6"
             data-name="Floral Candle"
             data-price="24"
-            data-image="./images/shop6.jpg"
+            data-image="./images/shop6.avif"
           >
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop7.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Love in the Air</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="7"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop7.jpg"
@@ -125,12 +138,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop8.jpg" alt="Candle" />
           <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="8"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop8.jpg"
@@ -138,12 +153,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
-          <img src="./images/shop10.jpg" alt="Candle" />
+          <img src="./images/shop8.jpg" alt="Candle" />
           <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="9"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop9.jpg"
@@ -151,12 +168,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop10.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Wildflower Drift</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="10"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop10.jpg"
@@ -164,12 +183,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop11.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Fresh Bloom</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="11"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop11.jpg"
@@ -177,12 +198,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop12.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Flora Mist</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="12"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop12.jpg"
@@ -190,12 +213,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop13.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Luft</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="13"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop13.jpg"
@@ -203,12 +228,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop14.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Luma</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="14"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop14.jpg"
@@ -216,12 +243,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop15.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Aura</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="15"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop15.jpg"
@@ -229,12 +258,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop16.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Cube</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="16"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop16.jpg"
@@ -242,12 +273,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop17.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Petal Whisper</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="17"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop17.jpg"
@@ -255,12 +288,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop18.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Twist Knot</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="18"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop18.jpg"
@@ -268,12 +303,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop19.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Celestial</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="19"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop19.jpg"
@@ -281,12 +318,14 @@
             Add to cart
           </button>
         </div>
+
         <div class="product-card">
           <img src="./images/shop20.jpg" alt="Candle" />
-          <h3 class="product-title">Floral Candle</h3>
-          <p class="price" data-price="24">$24</p>
+          <h3 class="product-title">Taper</h3>
+          <p class="price">$24</p>
           <button
             class="add-to-cart"
+            data-id="20"
             data-name="Floral Candle"
             data-price="24"
             data-image="./images/shop20.jpg"
@@ -297,7 +336,7 @@
       </div>
     </main>
 
-     <footer class="footer">
+    <footer class="footer">
       <p class="footer-text">© 2026 O.JM LUMIÈRE</p>
     </footer>
 
